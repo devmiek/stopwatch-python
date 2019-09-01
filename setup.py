@@ -13,7 +13,7 @@ def get_readme_text():
     readme_file_context = None
 
     try:
-        readme_file_context = open('./README.md')
+        readme_file_context = open('./README.md', mode = 'r', encoding = 'utf-8')
         return readme_file_context.read()
     finally:
         if readme_file_context:
@@ -29,11 +29,11 @@ setuptools.setup(
     ), 
     url = 'https://smallso.gitbook.io/stopwatch/python/overview', 
     license = 'Apache License 2.0', 
-    author = 'SmallSO Labs.', 
+    author = 'MIT License', 
     author_email = 'support@xiaoyy.org', 
     description = 'Programs for Python run high-precision stopwatch.', 
     long_description = get_readme_text(), 
-    long_description_content_type = 'text/markdown'
+    long_description_content_type = 'text/markdown', 
     packages = [
         'stopwatch'
     ],
@@ -41,7 +41,9 @@ setuptools.setup(
     zip_safe = False, 
     classifiers = (
         'Programming Language :: Python :: 3', 
-        ''
+        'License :: OSI Approved :: MIT License', 
+        'Operating System :: OS Independent', 
+        'Development Status :: 5 - Production/Stable'
     )
 )
 
