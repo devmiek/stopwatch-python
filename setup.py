@@ -7,6 +7,19 @@ import setuptools
 from stopwatch import Version
 
 
+# define get_readme_text function
+
+def get_readme_text():
+    readme_file_context = None
+
+    try:
+        readme_file_context = open('./README.md')
+        return readme_file_context.read()
+    finally:
+        if readme_file_context:
+            readme_file_context.close()
+
+
 setuptools.setup(
     name = 'stopwatch', 
     version = '{MAJOR}.{MINOR}.{REVISION}'.format(
@@ -19,11 +32,17 @@ setuptools.setup(
     author = 'SmallSO Labs.', 
     author_email = 'support@xiaoyy.org', 
     description = 'Programs for Python run high-precision stopwatch.', 
+    long_description = get_readme_text(), 
+    long_description_content_type = 'text/markdown'
     packages = [
         'stopwatch'
     ],
     python_requires = '>=3.6', 
-    zip_safe = False
+    zip_safe = False, 
+    classifiers = (
+        'Programming Language :: Python :: 3', 
+        ''
+    )
 )
 
 wheel_file_name: str = './dist/stopwatch-{VERSION_NUMBER}-py3-none-any.whl'.format(
