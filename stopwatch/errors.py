@@ -61,3 +61,31 @@ class LapNameError(Error):
     '''
 
     pass
+
+
+# define StopwatchNameError exception class
+
+class StopwatchNameError(Error):
+    '''
+    The Stopwatch unique name is invalid.
+
+    This exception is thrown, for example, when trying to get a Stopwatch 
+        instance that does not exist from Stopwatch Manager or add a 
+        Stopwatch instance with the same name.
+    '''
+
+    pass
+
+
+# define MaxLimitError exception class
+
+class MaxLimitError(Error):
+    '''
+    The indicator exceeded the maximum limit.
+
+    For example, adding a Stopwatch instance to the Stopwatch manager 
+        will raise this exception when the maximum number of instances 
+        limit is exceeded.
+    '''
+
+    pass

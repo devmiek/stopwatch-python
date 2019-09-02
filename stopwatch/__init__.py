@@ -31,19 +31,27 @@ from stopwatch.version import Version
 
 from stopwatch.errors import StatusError
 from stopwatch.errors import LapNameError
+from stopwatch.errors import StopwatchNameError
 
 from stopwatch.watch import Stopwatch
 from stopwatch.watch import StopwatchStatus
+
+from stopwatch.manager import StopwatchManager
 
 
 # define __all__ variable
 
 __all__: list = [
     Version, 
+
     StatusError, 
     LapNameError, 
+    StopwatchNameError, 
+
     Stopwatch, 
-    StopwatchStatus
+    StopwatchStatus, 
+    
+    StopwatchManager, 
 ]
 
 
@@ -54,3 +62,8 @@ __version__: str = '{MAJOR}.{MINOR}.{REVISION}'.format(
     MINOR = Version.minor, 
     REVISION = Version.revision
 )
+
+
+# define default_manager variable
+
+default_manager: StopwatchManager = StopwatchManager()

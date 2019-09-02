@@ -149,7 +149,7 @@ class Stopwatch:
 
     def lap(self, 
         lap_name: str = None
-    ):
+    ) -> float:
         '''
         Record the time once.
 
@@ -159,6 +159,9 @@ class Stopwatch:
         
         Args:
             lap_name, str: Record name.
+        
+        Returns:
+            The time (in seconds) to return this record.
         
         Raises:
             ValueError: The data type or value of the parameter is invalid.
@@ -185,6 +188,7 @@ class Stopwatch:
             self.__stopwatch_results) + 1)] = stopwatch_lap_count - self.__stopwatch_last_count
         
         self.__stopwatch_last_count = stopwatch_lap_count
+        return stopwatch_lap_count
 
 
     # define reset function
@@ -206,6 +210,31 @@ class Stopwatch:
         self.__stopwatch_start_count = None
         self.__stopwatch_last_count = None
         self.__stopwatch_total_count = float()
+
+
+    # define has_lap function
+
+    def has_lap(self, 
+        lap_name: str
+    ) -> bool:
+        '''
+        Check if the specified timing record exists.
+
+        Args:
+            lap_name, str: Record the name. If it is an anonymous record, 
+                the name is lap_ + number(for example: lap_1).
+        
+        Returns:
+            Returns True if it exists, or False if it does not exist.
+        
+        Raises:
+            ValueError: The data type or value of the parameter is invalid.
+        '''
+
+        if not lap_name or not isinstance(lap_name, str):
+            raise ValueError('<lap_name> value invalid')
+        
+        return lap_name in self.__stopwatch_laps
 
 
     # define get_lap function
@@ -276,6 +305,72 @@ class Stopwatch:
         return self.get_lap('lap_' + str(lap_number), lap_precision)
 
 
+    # define get_average_of_laps function
+
+    def get_average_of_laps(self, 
+        average_precision: int = None
+    ) -> float:
+        '''
+        Get the average (in seconds) of all timing records.
+
+        Args:
+            average_precision, int: average precision (number of decimal places). 
+                If not provided or not, the default precision value of the 
+                stopwatch will be used.  whose value should be less than or 
+                equal to the constant MAX_STOPWATCH_PRECISION.
+        
+        Returns:
+            Returns the average (in seconds) of all timing records.
+        
+        Raises:
+            ValueError: The data type or value of the parameter is invalid.
+
+        '''
+
+        if not average_precision:
+            average_precision = self.__stopwatch_precision
+        if not isinstance(average_precision, int):
+            raise ValueError('<average_precision> value invalid')
+        if average_precision > MAX_STOPWATCH_PRECISION:
+            raise ValueError('<average_precision> value should be less than: ' + str(MAX_STOPWATCH_PRECISION))
+
+        if len(self.__stopwatch_laps) == 0:
+            return 0
+
+        total_of_laps: float = 0
+
+        for lap_name in self.__stopwatch_laps:
+            total_of_laps += self.__stopwatch_laps[lap_name]
+        
+        return round(total_of_laps / len(self.__stopwatch_laps), average_precision)
+
+
+    # define get_laps function
+
+    def get_laps(self) -> list:
+        '''
+        Get all timing record names.
+
+        Returns:
+            Returns a list of all the timed record names.
+        '''
+
+        return self.__stopwatch_laps.keys()
+
+
+    # define get_lap_count function
+
+    def get_lap_count(self) -> int:
+        '''
+        Get the number of timed records.
+
+        Returns:
+            The number of timed records.
+        '''
+
+        return len(self.__stopwatch_laps)
+
+
     # define get_watch function
 
     def get_watch(self, 
@@ -298,9 +393,6 @@ class Stopwatch:
             ValueError: The data type or value of the parameter is invalid.
         '''
 
-        if self.__stopwatch_status != StopwatchStatus.Stopped:
-            raise StatusError('stopwatch has started')
-
         if not watch_precision:
             watch_precision = self.__stopwatch_precision
         elif not isinstance(watch_precision, int):
@@ -308,4 +400,10 @@ class Stopwatch:
         elif watch_precision > MAX_STOPWATCH_PRECISION:
             raise ValueError('<watch_precision> value should be less than ' + str(MAX_STOPWATCH_PRECISION))
         
-        return round(self.__stopwatch_total_count, watch_precision)
+        if self.__stopwatch_status == StopwatchStatus.Started:
+            return round(self.__stopwatch_total_count + 
+                ((float(time.perf_counter()) - self.__stopwatch_start_count)), watch_precision)
+        elif self.__stopwatch_status == StopwatchStatus.Stopped:
+            return round(self.__stopwatch_total_count, watch_precision)
+        else:
+            raise StatusError('stopwatch status is invalid')
