@@ -164,7 +164,6 @@ class Stopwatch:
             ValueError: The data type or value of the parameter is invalid.
             StatusError: Stopwatch has not started.
             LapNameError: The same record name already exists.
-            
         '''
 
         stopwatch_lap_count: float = float(time.perf_counter())
@@ -182,7 +181,7 @@ class Stopwatch:
         if not self.__stopwatch_last_count:
             self.__stopwatch_last_count = self.__stopwatch_start_count
         
-        self.__stopwatch_laps[lap_name if lap_name else 'lap' + str(len(
+        self.__stopwatch_laps[lap_name if lap_name else 'lap_' + str(len(
             self.__stopwatch_results) + 1)] = stopwatch_lap_count - self.__stopwatch_last_count
         
         self.__stopwatch_last_count = stopwatch_lap_count
