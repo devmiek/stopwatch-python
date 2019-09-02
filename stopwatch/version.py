@@ -38,4 +38,4 @@ class Version:
 
     major: int = 0
     minor: int = 1
-    revision: int = 1
+    revision: int = 2
