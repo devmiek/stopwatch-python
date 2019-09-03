@@ -151,10 +151,14 @@ class StopwatchManager:
                 constructor method max_stopwatch_count parameter.
         '''
 
-        return self.add(
+        new_stopwatch: Stopwatch = Stopwatch()
+
+        self.add(
             stopwatch_name = stopwatch_name, 
-            stopwatch_instance = Stopwatch()
+            stopwatch_instance = new_stopwatch
         )
+
+        return new_stopwatch
 
     
     # define create_and_start function
