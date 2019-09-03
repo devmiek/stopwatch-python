@@ -130,6 +130,10 @@ class Stopwatch:
         '''
         Stop running Stopwatch.
 
+        Returns:
+            Returns the total time (in seconds) that Stopwatch will count 
+                from the first time to the stop time.
+
         Raises:
             StatusError: Stopwatch has stopped or never started.
         '''
