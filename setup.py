@@ -28,8 +28,8 @@ setuptools.setup(
         REVISION = Version.revision
     ),
     url = 'https://smallso.gitbook.io/stopwatch/python/overview',
-    license = 'Apache License 2.0',
-    author = 'MIT License',
+    license = 'MIT License',
+    author = 'SmallSO Labs.',
     author_email = 'support@xiaoyy.org',
     description = 'Programs for Python run high-precision stopwatch.',
     long_description = get_readme_text(),
