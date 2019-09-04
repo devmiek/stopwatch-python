@@ -42,24 +42,24 @@ from stopwatch.manager import StopwatchManager
 # define __all__ variable
 
 __all__: list = [
-    'Version', 
+    'Version',
 
-    'StatusError', 
-    'LapNameError', 
-    'StopwatchNameError', 
+    'StatusError',
+    'LapNameError',
+    'StopwatchNameError',
 
-    'Stopwatch', 
-    'StopwatchStatus', 
+    'Stopwatch',
+    'StopwatchStatus',
     
-    'StopwatchManager', 
+    'StopwatchManager',
 ]
 
 
 # define __version__ variable
 
 __version__: str = '{MAJOR}.{MINOR}.{REVISION}'.format(
-    MAJOR = Version.major, 
-    MINOR = Version.minor, 
+    MAJOR = Version.major,
+    MINOR = Version.minor,
     REVISION = Version.revision
 )
 

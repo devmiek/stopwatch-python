@@ -21,36 +21,36 @@ def get_readme_text():
 
 
 setuptools.setup(
-    name = 'stopwatch', 
+    name = 'stopwatch',
     version = '{MAJOR}.{MINOR}.{REVISION}'.format(
-        MAJOR = Version.major, 
-        MINOR = Version.minor, 
+        MAJOR = Version.major,
+        MINOR = Version.minor,
         REVISION = Version.revision
-    ), 
-    url = 'https://smallso.gitbook.io/stopwatch/python/overview', 
-    license = 'Apache License 2.0', 
-    author = 'MIT License', 
-    author_email = 'support@xiaoyy.org', 
-    description = 'Programs for Python run high-precision stopwatch.', 
-    long_description = get_readme_text(), 
-    long_description_content_type = 'text/markdown', 
+    ),
+    url = 'https://smallso.gitbook.io/stopwatch/python/overview',
+    license = 'Apache License 2.0',
+    author = 'MIT License',
+    author_email = 'support@xiaoyy.org',
+    description = 'Programs for Python run high-precision stopwatch.',
+    long_description = get_readme_text(),
+    long_description_content_type = 'text/markdown',
     packages = [
         'stopwatch'
     ],
-    python_requires = '>=3.6', 
-    zip_safe = False, 
+    python_requires = '>=3.6',
+    zip_safe = False,
     classifiers = (
-        'Programming Language :: Python :: 3', 
-        'License :: OSI Approved :: MIT License', 
-        'Operating System :: OS Independent', 
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
         'Development Status :: 5 - Production/Stable'
     )
 )
 
 wheel_file_name: str = './dist/stopwatch-{VERSION_NUMBER}-py3-none-any.whl'.format(
     VERSION_NUMBER = '{MAJOR}.{MINOR}.{REVISION}'.format(
-        MAJOR = Version.major, 
-        MINOR = Version.minor, 
+        MAJOR = Version.major,
+        MINOR = Version.minor,
         REVISION = Version.revision
     )
 )

@@ -44,7 +44,7 @@ class StopwatchManager:
     
     # define __init__ function
 
-    def __init__(self, 
+    def __init__(self,
         max_stopwatch_count: int = None
     ):
         '''
@@ -68,7 +68,7 @@ class StopwatchManager:
 
     # define get function
 
-    def get(self, 
+    def get(self,
         stopwatch_name: str
     ) -> Stopwatch:
         '''
@@ -96,8 +96,8 @@ class StopwatchManager:
     
     # define add function
 
-    def add(self, 
-        stopwatch_name: str, 
+    def add(self,
+        stopwatch_name: str,
         stopwatch_instance: Stopwatch
     ):
         '''
@@ -132,7 +132,7 @@ class StopwatchManager:
 
     # define create function
 
-    def create(self, 
+    def create(self,
         stopwatch_name: str
     ) -> Stopwatch:
         '''
@@ -154,7 +154,7 @@ class StopwatchManager:
         new_stopwatch: Stopwatch = Stopwatch()
 
         self.add(
-            stopwatch_name = stopwatch_name, 
+            stopwatch_name = stopwatch_name,
             stopwatch_instance = new_stopwatch
         )
 
@@ -163,7 +163,7 @@ class StopwatchManager:
     
     # define create_and_start function
 
-    def create_and_start(self, 
+    def create_and_start(self,
         stopwatch_name: str
     ) -> Stopwatch:
         '''
@@ -188,7 +188,7 @@ class StopwatchManager:
 
     # define remove function
 
-    def remove(self, 
+    def remove(self,
         stopwatch_name: str
     ):
         '''
@@ -223,7 +223,7 @@ class StopwatchManager:
 
     # define has function
 
-    def has(self, 
+    def has(self,
         stopwatch_name: str
     ) -> bool:
         '''
@@ -260,7 +260,7 @@ class StopwatchManager:
 
     # define starts function
 
-    def starts(self, 
+    def starts(self,
         stopwatch_names: list = None
     ) -> int:
         '''
@@ -300,7 +300,7 @@ class StopwatchManager:
 
     # define stops function
 
-    def stops(self, 
+    def stops(self,
         stopwatch_names: list = None
     ) -> int:
         '''
@@ -340,7 +340,7 @@ class StopwatchManager:
 
     # define resets function
 
-    def resets(self, 
+    def resets(self,
         stopwatch_names: list = None
     ):
         '''
@@ -371,8 +371,8 @@ class StopwatchManager:
 
     # define get_watchs function
 
-    def get_watchs(self, 
-        stopwatch_names: list = None, 
+    def get_watchs(self,
+        stopwatch_names: list = None,
         watch_precision: int = None
     ) -> float:
         '''
@@ -410,7 +410,7 @@ class StopwatchManager:
             raise StopwatchNameError('no such stopwatch: ' + stopwatch_name)
         except StatusError as error:
             raise StatusError('{ERROR_MESSAGE}: {STOPWATCH_NAME}'.format(
-                ERROR_MESSAGE = str(error), 
+                ERROR_MESSAGE = str(error),
                 STOPWATCH_NAME = stopwatch_name
             ))
 

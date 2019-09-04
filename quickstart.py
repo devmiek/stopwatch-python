@@ -40,7 +40,7 @@ def main():
 
     for count in range(3):
         print('{COUNT} check: {WATCH_SECONDS} seconds'.format(
-            COUNT = count + 1, 
+            COUNT = count + 1,
             WATCH_SECONDS = demo_stopwatch.get_watch()
         ))
 
@@ -64,10 +64,10 @@ def main():
             '----------\n'
             'average of stages: {AVERAGE_SECONDS} seconds'
         ).format(
-            TOTAL_SECONDS = demo_stopwatch.stop(), 
-            STAGE1_SECONDS = demo_stopwatch.get_lap('stage1'), 
-            STAGE2_SECONDS = demo_stopwatch.get_lap('stage2'), 
-            STAGE3_SECONDS = demo_stopwatch.get_lap('stage2'), 
+            TOTAL_SECONDS = demo_stopwatch.stop(),
+            STAGE1_SECONDS = demo_stopwatch.get_lap('stage1'),
+            STAGE2_SECONDS = demo_stopwatch.get_lap('stage2'),
+            STAGE3_SECONDS = demo_stopwatch.get_lap('stage2'),
             AVERAGE_SECONDS = demo_stopwatch.get_average_of_laps()
         )
     )

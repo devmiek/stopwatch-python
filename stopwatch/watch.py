@@ -62,7 +62,7 @@ class Stopwatch:
 
     # define __init__ function
 
-    def __init__(self, 
+    def __init__(self,
         default_precision: int = 3
     ):
         '''
@@ -151,7 +151,7 @@ class Stopwatch:
 
     # define lap function
 
-    def lap(self, 
+    def lap(self,
         lap_name: str = None
     ) -> float:
         '''
@@ -218,7 +218,7 @@ class Stopwatch:
 
     # define has_lap function
 
-    def has_lap(self, 
+    def has_lap(self,
         lap_name: str
     ) -> bool:
         '''
@@ -243,8 +243,8 @@ class Stopwatch:
 
     # define get_lap function
 
-    def get_lap(self, 
-        lap_name: str, 
+    def get_lap(self,
+        lap_name: str,
         lap_precision: int = None
     ) -> float:
         '''
@@ -284,8 +284,8 @@ class Stopwatch:
 
     # define get_lap_by_number function
 
-    def get_lap_by_number(self, 
-        lap_number: int, 
+    def get_lap_by_number(self,
+        lap_number: int,
         lap_precision: int = None
     ) -> float:
         '''
@@ -311,7 +311,7 @@ class Stopwatch:
 
     # define get_average_of_laps function
 
-    def get_average_of_laps(self, 
+    def get_average_of_laps(self,
         average_precision: int = None
     ) -> float:
         '''
@@ -377,7 +377,7 @@ class Stopwatch:
 
     # define get_watch function
 
-    def get_watch(self, 
+    def get_watch(self,
         watch_precision: int = None
     ) -> float:
         '''
