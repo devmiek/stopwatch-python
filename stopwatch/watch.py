@@ -157,7 +157,7 @@ class Stopwatch:
         '''
         Record the time once.
 
-        Record the interval from the last record to the current time. 
+        Record the interval from the last record to the current time.
             If this is the first record, record the interval from the 
             beginning to the current.
         
@@ -253,7 +253,7 @@ class Stopwatch:
         Args:
             lap_name, str: Record the name. If it is an anonymous record, 
                 the name is lap_ + number(for example: lap_1).
-            lap_precision, int: Record precision (number of decimal places). 
+            lap_precision, int: Record precision (number of decimal places).
                 If not provided or not, the default precision value of the 
                 stopwatch will be used.  whose value should be less than or 
                 equal to the constant MAX_STOPWATCH_PRECISION.
@@ -293,7 +293,7 @@ class Stopwatch:
 
         Args:
             lap_number, int: Record number, starting with 1.
-            lap_precision, int: Record precision (number of decimal places). 
+            lap_precision, int: Record precision (number of decimal places).
                 If not provided or not, the default precision value of the 
                 stopwatch will be used.  whose value should be less than or 
                 equal to the constant MAX_STOPWATCH_PRECISION.
@@ -318,7 +318,7 @@ class Stopwatch:
         Get the average (in seconds) of all timing records.
 
         Args:
-            average_precision, int: average precision (number of decimal places). 
+            average_precision, int: average precision (number of decimal places).
                 If not provided or not, the default precision value of the 
                 stopwatch will be used.  whose value should be less than or 
                 equal to the constant MAX_STOPWATCH_PRECISION.
@@ -384,7 +384,7 @@ class Stopwatch:
         Gets the statistical time (in seconds) that Stopwatch is from start to finish.
 
         Args:
-            watch_precision, int: Watch precision (number of decimal places). 
+            watch_precision, int: Watch precision (number of decimal places).
                 If not provided or not, the default precision value of the 
                 stopwatch will be used.  whose value should be less than or 
                 equal to the constant MAX_STOPWATCH_PRECISION.

@@ -289,7 +289,7 @@ class StopwatchManager:
 
         try:
             for stopwatch_name in stopwatch_names if stopwatch_names else self.__stopwatch_instances:
-                if self.__stopwatch_instances[stopwatch_name].get_status() == StopwatchStatus.Stopped:        
+                if self.__stopwatch_instances[stopwatch_name].get_status() == StopwatchStatus.Stopped:
                     self.__stopwatch_instances[stopwatch_name].start()
                     real_start_count += 1
         except KeyError:
@@ -383,7 +383,7 @@ class StopwatchManager:
             stopwatch_names, list: A list of unique names for the Stopwatch instance 
                 that need to get the total duration. If this parameter is not supplied 
                 or if the value is None, then all Stopwatch instances are obtained.
-            watch_precision, int: Watch precision (number of decimal places).  
+            watch_precision, int: Watch precision (number of decimal places).
                 If not provided or not, the default precision value of the stopwatch 
                 will be used.  whose value should be less than or equal to the constant 
                 MAX_STOPWATCH_PRECISION.

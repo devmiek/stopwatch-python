@@ -30,7 +30,7 @@ class Error(Exception):
     '''
     A generic exception indicating the Stopwatch package.
 
-    All exceptions defined in the current module are based on this exception. 
+    All exceptions defined in the current module are based on this exception.
         Normally, you should not catch this exception.
     '''
 
