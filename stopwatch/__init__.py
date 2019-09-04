@@ -42,16 +42,16 @@ from stopwatch.manager import StopwatchManager
 # define __all__ variable
 
 __all__: list = [
-    Version, 
+    'Version', 
 
-    StatusError, 
-    LapNameError, 
-    StopwatchNameError, 
+    'StatusError', 
+    'LapNameError', 
+    'StopwatchNameError', 
 
-    Stopwatch, 
-    StopwatchStatus, 
+    'Stopwatch', 
+    'StopwatchStatus', 
     
-    StopwatchManager, 
+    'StopwatchManager', 
 ]
 
 
