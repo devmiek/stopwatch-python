@@ -189,7 +189,7 @@ class Stopwatch:
             self.__stopwatch_last_count = self.__stopwatch_start_count
         
         self.__stopwatch_laps[lap_name if lap_name else 'lap_' + str(len(
-            self.__stopwatch_results) + 1)] = stopwatch_lap_count - self.__stopwatch_last_count
+            self.__stopwatch_laps) + 1)] = stopwatch_lap_count - self.__stopwatch_last_count
         
         self.__stopwatch_last_count = stopwatch_lap_count
         return stopwatch_lap_count
@@ -359,7 +359,7 @@ class Stopwatch:
             Returns a list of all the timed record names.
         '''
 
-        return self.__stopwatch_laps.keys()
+        return list(self.__stopwatch_laps.keys())
 
 
     # define get_lap_count function

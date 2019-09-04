@@ -1,4 +1,4 @@
-# stopwatch.version.py is python-3.7.4 source file
+# tests.__main__.py is python-3.7.4 source file
 
 # Copyright (c) 2019 SmallSO Labs.
 # 
@@ -21,21 +21,22 @@
 # SOFTWARE.
 
 '''
-The current module defines the version information of the package Stopwatch.
+The main module of tests tests implements functional unit tests 
+    for the package Stopwatch to ensure they work correctly.
 '''
 
-# define Version static class
+import watch
+import manager
 
-class Version:
-    '''
-    The version information of the current package Stopwatch.
 
-    Attributes:
-        major, int: The major version number.
-        minor, int: The minor version number.
-        revision, int: The revision version number.
-    '''
+# define main function
 
-    major: int = 0
-    minor: int = 1
-    revision: int = 4
+def main():
+    watch.tests()
+    manager.tests()
+
+
+# define virtual main function
+
+if __name__ == '__main__':
+    main()

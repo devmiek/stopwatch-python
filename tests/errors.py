@@ -1,4 +1,4 @@
-# stopwatch.version.py is python-3.7.4 source file
+# tests.errors.py is python-3.7.4 source file
 
 # Copyright (c) 2019 SmallSO Labs.
 # 
@@ -21,21 +21,17 @@
 # SOFTWARE.
 
 '''
-The current module defines the version information of the package Stopwatch.
+This module defines the exception class for the package tests.
 '''
 
-# define Version static class
 
-class Version:
-    '''
-    The version information of the current package Stopwatch.
+# define Error exception class
 
-    Attributes:
-        major, int: The major version number.
-        minor, int: The minor version number.
-        revision, int: The revision version number.
-    '''
+class Error(Exception):
+    pass
 
-    major: int = 0
-    minor: int = 1
-    revision: int = 4
+
+# define TestError exception class
+
+class TestError(Error):
+    pass

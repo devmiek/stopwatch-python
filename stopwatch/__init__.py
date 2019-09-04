@@ -25,6 +25,8 @@ The package Stopwatch implements statistics on runtime.
 
 By using Stopwatch, you can quickly record and manage 
     your program's high-precision runtime.
+
+Developer documentation: https://smallso.gitbook.io/stopwatch/v/en/python/overview
 '''
 
 from stopwatch.version import Version

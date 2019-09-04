@@ -27,11 +27,11 @@ setuptools.setup(
         MINOR = Version.minor,
         REVISION = Version.revision
     ),
-    url = 'https://smallso.gitbook.io/stopwatch/python/overview',
+    url = 'https://smallso.gitbook.io/stopwatch/v/en/python/overview',
     license = 'MIT License',
     author = 'SmallSO Labs.',
     author_email = 'support@xiaoyy.org',
-    description = 'Programs for Python run high-precision stopwatch.',
+    description = 'A program-running high-precision stopwatch for Python.',
     long_description = get_readme_text(),
     long_description_content_type = 'text/markdown',
     packages = [

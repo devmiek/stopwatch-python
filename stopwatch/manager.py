@@ -330,7 +330,7 @@ class StopwatchManager:
         try:
             for stopwatch_name in stopwatch_names if stopwatch_names else self.__stopwatch_instances:
                 if self.__stopwatch_instances[stopwatch_name].get_status() == StopwatchStatus.Started:        
-                    self.__stopwatch_instances[stopwatch_name].start()
+                    self.__stopwatch_instances[stopwatch_name].stop()
                     real_stop_count += 1
         except KeyError:
             raise StopwatchNameError('no such stopwatch: ' + stopwatch_name)

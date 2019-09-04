@@ -1,4 +1,4 @@
-# stopwatch.version.py is python-3.7.4 source file
+# tests.__init__.py is python-3.7.4 source file
 
 # Copyright (c) 2019 SmallSO Labs.
 # 
@@ -21,21 +21,5 @@
 # SOFTWARE.
 
 '''
-The current module defines the version information of the package Stopwatch.
+Package tests are used to test the functionality of the Stopwatch package.
 '''
-
-# define Version static class
-
-class Version:
-    '''
-    The version information of the current package Stopwatch.
-
-    Attributes:
-        major, int: The major version number.
-        minor, int: The minor version number.
-        revision, int: The revision version number.
-    '''
-
-    major: int = 0
-    minor: int = 1
-    revision: int = 4
