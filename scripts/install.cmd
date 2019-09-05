@@ -1,2 +1,2 @@
-pip3 uninstall -y stopwatch
-pip3 install ../dist/stopwatch-release-py3-none-any.whl
+pip uninstall -y stopwatch
+pip install ../dist/stopwatch-release-py3-none-any.whl
