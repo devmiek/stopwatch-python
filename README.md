@@ -3,7 +3,6 @@
 [![version](https://img.shields.io/github/v/release/nobody-night/stopwatch-python)](https://github.com/nobody-night/stopwatch-python/releases/)
 [![license](https://img.shields.io/github/license/nobody-night/stopwatch-python)](LICENSE)
 ![codacy](https://api.codacy.com/project/badge/Grade/914605cdf9e64cd4a210763577b9d22c)
-![codebeat](https://codebeat.co/badges/64570bdc-61dc-47a8-86c5-c40797a2f00c)
 
 Stopwatch for Python is a Stopwatch implementation for Python. By using Stopwatch, you can easily count and manage the high-precision time-consuming of Python programs.
 
