@@ -60,9 +60,9 @@ __all__: list = [
 # define __version__ variable
 
 __version__: str = '{MAJOR}.{MINOR}.{REVISION}'.format(
-    MAJOR = Version.major,
-    MINOR = Version.minor,
-    REVISION = Version.revision
+    MAJOR = Version.MAJOR,
+    MINOR = Version.MINOR,
+    REVISION = Version.REVISION
 )
 
 

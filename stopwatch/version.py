@@ -30,12 +30,12 @@ class Version:
     '''
     The version information of the current package Stopwatch.
 
-    Attributes:
-        major, int: The major version number.
-        minor, int: The minor version number.
-        revision, int: The revision version number.
+    Consts:
+        MAJOR, int: The major version number.
+        MINOR, int: The minor version number.
+        REVISION: int: The revision version number.
     '''
 
-    major: int = 0
-    minor: int = 1
-    revision: int = 4
+    MAJOR: int = 0
+    MINOR: int = 1
+    REVISION: int = 5

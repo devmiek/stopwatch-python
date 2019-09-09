@@ -23,9 +23,9 @@ def get_readme_text():
 setuptools.setup(
     name = 'stopwatch',
     version = '{MAJOR}.{MINOR}.{REVISION}'.format(
-        MAJOR = Version.major,
-        MINOR = Version.minor,
-        REVISION = Version.revision
+        MAJOR = Version.MAJOR,
+        MINOR = Version.MINOR,
+        REVISION = Version.REVISION
     ),
     url = 'https://smallso.gitbook.io/stopwatch/v/en/python/overview',
     license = 'MIT License',
@@ -49,9 +49,9 @@ setuptools.setup(
 
 wheel_file_name: str = './dist/stopwatch-{VERSION_NUMBER}-py3-none-any.whl'.format(
     VERSION_NUMBER = '{MAJOR}.{MINOR}.{REVISION}'.format(
-        MAJOR = Version.major,
-        MINOR = Version.minor,
-        REVISION = Version.revision
+        MAJOR = Version.MAJOR,
+        MINOR = Version.MINOR,
+        REVISION = Version.REVISION
     )
 )
 
