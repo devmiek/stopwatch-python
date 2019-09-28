@@ -4,7 +4,7 @@ jobs:
   linux_tests:
     runs-on: ubuntu-latest
     steps:
-    - &linux_clone name: Clone
+    - name: Clone
       uses: actions/checkout@v1
     - name: Install Runtime
       uses: actions/setup-python@v1
@@ -28,7 +28,8 @@ jobs:
   macos_tests:
     runs-on: macOS-latest
     steps:
-    - *linux_clone
+    - name: Clone
+      uses: actions/checkout@v1
     - name: Install Runtime
       uses: actions/setup-python@v1
       with: 
