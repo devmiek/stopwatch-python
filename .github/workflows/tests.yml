@@ -16,6 +16,8 @@ jobs:
     - name: Install
       run: |
         cd scripts
+        chmod +x build.sh
+        chmod +x install.sh
         ./build.sh
         ./install.sh
     - name: Run Tests
