@@ -11,11 +11,13 @@ jobs:
         python-version: 3.6
     - name: Check Runtime
       run: python -V
+    - name: Check Files
+      run: ls
     - name: Install
       run: |
         cd scripts
-        ./build
-        ./install
+        ./build.sh
+        ./install.sh
     - name: Run Tests
       run: python tests
       
