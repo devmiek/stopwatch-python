@@ -25,6 +25,30 @@ jobs:
         ./install.sh
     - name: Run Tests
       run: python tests
+  macos_tests:
+    runs-on: macOS-latest
+    steps:
+    - name: Clone
+      uses: actions/checkout@v1
+    - name: Install Runtime
+      uses: actions/setup-python@v1
+      with: 
+        python-version: 3.6
+    - name: Check Runtime
+      run: python -V
+    - name: Install Dependency
+      run: |
+        pip install setuptools
+        pip install wheel
+    - name: Install Stopwatch
+      run: |
+        cd scripts
+        chmod +x build.sh
+        chmod +x install.sh
+        ./build.sh
+        ./install.sh
+    - name: Run Tests
+      run: python tests
   windows_test:
     runs-on: windows-latest
     steps:
@@ -48,4 +72,4 @@ jobs:
       shell: pwsh
     - name: Run Tests
       run: python tests
-      
+     
