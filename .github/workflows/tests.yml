@@ -11,9 +11,11 @@ jobs:
         python-version: 3.6
     - name: Check Runtime
       run: python -V
-    - name: Check Files
-      run: ls
-    - name: Install
+    - name: Install Dependency
+      run: |
+        pip install setuptools
+        pip install wheel
+    - name: Install Stopwatch
       run: |
         cd scripts
         chmod +x build.sh
