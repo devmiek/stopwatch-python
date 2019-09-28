@@ -4,8 +4,9 @@ jobs:
   linux_tests:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Set Python Version
+    - name: Clone
+      uses: actions/checkout@v1
+    - name: Install Runtime
       uses: actions/setup-python@v1
       with: 
         python-version: 3.6
@@ -22,6 +23,29 @@ jobs:
         chmod +x install.sh
         ./build.sh
         ./install.sh
+    - name: Run Tests
+      run: python tests
+  windows_test:
+    runs-on: windows-latest
+    steps:
+    - name: Clone
+      uses: actions/checkout@v1
+    - name: Install Runtime
+      uses: actions/setup-python@v1
+      with: 
+        python-version: 3.6
+    - name: Check Runtime
+      run: python -V
+    - name: Install Dependency
+      run: |
+        pip install setuptools
+        pip install wheel
+    - name: Install Stopwatch
+      run: |
+        cd scripts
+        ./build.cmd
+        ./install.cmd
+      shell: pwsh
     - name: Run Tests
       run: python tests
       
