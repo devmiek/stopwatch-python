@@ -4,21 +4,18 @@ jobs:
   linux_tests:
     runs-on: ubuntu-latest
     steps:
-    - name: check_runtime
+    - uses: actions/checkout@v1
+    - name: Set Python Version
+      uses: actions/setup-python@v1
+      with: 
+        python-version: 3.6
+    - name: Check Runtime
       run: python -V
-    - name: run_tests
+    - name: Install
+      run: |
+        cd scripts
+        ./build
+        ./install
+    - name: Run Tests
       run: python tests
-  macos_tests:
-    runs-on: macOS-latest
-    steps:
-    - name: check_runtime
-      run: python -V
-    - name: run_tests
-      run: python tests
-  windows_tests:
-    runs-on: windows-latest
-    steps:
-    - name: check_runtime
-      run: python -V
-    - name: run_tests
-      run: python tests
+      
