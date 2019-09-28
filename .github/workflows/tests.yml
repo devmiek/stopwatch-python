@@ -1,0 +1,24 @@
+name: stopwatch-python-tests
+on: push
+jobs:
+  linux_tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: check_runtime
+      run: python -V
+    - name: run_tests
+      run: python tests
+  macos_tests:
+    runs-on: macOS-latest
+    steps:
+    - name: check_runtime
+      run: python -V
+    - name: run_tests
+      run: python tests
+  windows_tests:
+    runs-on: windows-latest
+    steps:
+    - name: check_runtime
+      run: python -V
+    - name: run_tests
+      run: python tests
